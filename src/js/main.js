@@ -1,6 +1,5 @@
 /**
  * 
- * @documentation
  * @documentationApi
  * @iconUniformNames
  * @minimizeProperties
