@@ -1,7 +1,5 @@
 /**
  * 
- * @sensibleDefaults
- * @svgSrc
  * @documentation
  * @documentationApi
  * @iconUniformNames
