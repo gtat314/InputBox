@@ -1,23 +1,5 @@
 /**
  * 
- * @documentationApi
- * @iconUniformNames
- * @minimizeProperties
- * @objectifyEventListeners
- * @parentElementSelector
- * @distinctEventListeners
- * @propertiesElemUnderscore
- * @propertify
- * @propertyNamingConventions
- * @methodNamingConventions
- * @htmlReadyMethods
- */
-
-
-
-
-/**
- * 
  * @param {Object}                                       schema
  * @param {HTMLElement|CSSRule}                          schema.parent
  * @param {String}                                      [schema.name]
