@@ -2,6 +2,7 @@
  * 
  * @param {Object}                                       schema
  * @param {HTMLElement|CSSRule}                          schema.parent
+ * @param {String}                                      [schema.pretext]
  * @param {String}                                      [schema.name]
  * @param {'text'|'email'}                              [schema.type]
  * @param {HTMLSourceElement}                           [schema.title]
@@ -141,6 +142,13 @@ function InputBox( schema ) {
     this._trimOnPaste = null;
 
     /**
+     * @property
+     * @private
+     * @var {String|null}
+     */
+    this._pretext = null;
+
+    /**
      * 
      * @property
      * @private
@@ -220,6 +228,12 @@ function InputBox( schema ) {
     if ( schema.hasOwnProperty( 'type' ) ) {
 
         this._type = schema.type;
+
+    }
+
+    if ( schema.hasOwnProperty( 'pretext' ) ) {
+
+        this._pretext = schema.pretext;
 
     }
 
@@ -886,6 +900,14 @@ InputBox.prototype._createFromSchema = function( schema ) {
     bodyElem = document.createElement( 'DIV' );
     bodyElem.classList.add( 'body' );
     fragment.appendChild( bodyElem );
+
+    if ( this._pretext !== null ) {
+
+        var pretextElem = document.createElement( 'P' );
+        pretextElem.textContent = this._pretext;
+        bodyElem.appendChild( pretextElem );
+
+    }
 
     this._inputElem = document.createElement( 'INPUT' );
     this._inputElem.classList.add( 'input' );

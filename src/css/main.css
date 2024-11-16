@@ -83,6 +83,14 @@ input-box .body {
 	align-items: center;
 }
 
+input-box .body p {
+	margin-right: 0.5rem;
+	font-weight: 600;
+	color: var(--theme-secondaryFont);
+	border-right: solid 2px var(--theme-discreetBoxShadow);
+	padding-right: 0.5rem;
+}
+
 input-box .body .input {
 	flex: 1;
 	background-color: var(--theme-inputBackgroundColor, rgba(0, 0, 0, 0));
