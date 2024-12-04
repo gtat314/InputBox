@@ -963,7 +963,6 @@ InputBox.prototype._createFromSchema = function( schema ) {
 
             this._forceIcon = true;
             this._iconElem.classList.add( 'active' );
-            this._parentElem.classList.add( 'mod_forceIcon' );
 
         }
 

@@ -4,7 +4,6 @@
 	@cssMod: mod_alignRight
 	@cssMod: mod_small
 	@cssMod: mod_uppercase
-	@cssMod: mod_forceIcon
 	--theme-transitionDuration 			0.15s
 	--theme-highlightedBackgroundColor 	rgba(0, 0, 0, 0.1)
 	--theme-errorBackgroundColor 		rgba(255, 0, 0, 0.2)
