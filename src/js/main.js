@@ -884,7 +884,7 @@ InputBox.prototype._createFromSchema = function( schema ) {
 
     var fragment = document.createDocumentFragment();
 
-    titleElem = document.createElement( 'DIV' );
+    var titleElem = document.createElement( 'DIV' );
     titleElem.classList.add( 'title' );
     fragment.appendChild( titleElem );
 
@@ -897,7 +897,7 @@ InputBox.prototype._createFromSchema = function( schema ) {
     this._sampElem.classList.add( 'errorElem' );
     titleElem.appendChild( this._sampElem );
 
-    bodyElem = document.createElement( 'DIV' );
+    var bodyElem = document.createElement( 'DIV' );
     bodyElem.classList.add( 'body' );
     fragment.appendChild( bodyElem );
 
