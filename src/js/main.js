@@ -2,6 +2,7 @@
  * 
  * @param {Object}                                       schema
  * @param {HTMLElement|CSSRule}                          schema.parent
+ * @param {String}                                      [schema.uppercase] eg: 'el-GR'
  * @param {String}                                      [schema.pretext]
  * @param {String}                                      [schema.name]
  * @param {'text'|'email'}                              [schema.type]
@@ -203,6 +204,13 @@ function InputBox( schema ) {
      */
     this._inputName = null;
 
+    /**
+     * @property
+     * @private
+     * @type {String|false}
+     */
+    this._uppercase = false;
+
 
 
 
@@ -218,6 +226,12 @@ function InputBox( schema ) {
     }
 
     var autofocus = false;
+
+    if ( schema.hasOwnProperty( 'uppercase' ) ) {
+
+        this._uppercase = schema.uppercase;
+
+    }
 
     if ( schema.hasOwnProperty( 'trimOnPaste' ) ) {
 
@@ -480,9 +494,9 @@ InputBox.prototype.getValue = function() {
 
     if ( this._inputElem !== null ) {
 
-        if ( this._inputElem.classList.contains( 'uppercase' ) === true ) {
+        if ( this._uppercase !== false ) {
 
-            return this._inputElem.value.toLocaleUpperCase('el-GR').normalize('NFC').replace(/[\u0300-\u036f]/g, "");
+            return this._inputElem.value.toLocaleUpperCase( this._uppercase ).normalize('NFC').replace(/[\u0300-\u036f]/g, "");
 
         }
 
@@ -988,5 +1002,11 @@ InputBox.prototype._createFromSchema = function( schema ) {
     }
 
     this._parentElem.appendChild( fragment );
+
+    if ( this._uppercase !== false ) {
+
+        this._parentElem.classList.add( 'mod_uppercase' );
+
+    }
 
 };
