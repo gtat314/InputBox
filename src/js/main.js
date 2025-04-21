@@ -504,12 +504,6 @@ InputBox.prototype.getValue = function() {
 
     }
 
-    if ( this.editable !== null ) {
-
-        return this.editable.innerHTML;
-
-    }
-
 };
 
 /**
