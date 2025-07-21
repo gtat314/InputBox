@@ -1,3 +1,13 @@
+var InputBoxIcons = {
+    'default': "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><defs/><path d='M23 20.2L14.8 12 23 3.8 20.2 1 12 9.2 3.8 1 1 3.8 9.2 12 1 20.2 3.8 23l8.2-8.2 8.2 8.2z'/></svg>",
+    'loading': "<svg class='animateRotation' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='m4.26 18.32-1.42 1.42a11.94 11.94 0 0 1 0-15.48l1.42 1.42a9.96 9.96 0 0 0 0 12.64zM22 12c0 2.4-.85 4.6-2.26 6.32l1.42 1.42a11.94 11.94 0 0 0 0-15.48l-1.42 1.42A9.96 9.96 0 0 1 22 12zM5.68 4.26a9.95 9.95 0 0 1 12.64 0l1.42-1.42a11.94 11.94 0 0 0-15.48 0l1.42 1.42zm12.64 15.48a9.95 9.95 0 0 1-12.64 0l-1.42 1.42a11.94 11.94 0 0 0 15.48 0l-1.42-1.42z'/></svg>",
+    'success': "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M20.29 2 9 13.57 3.71 8.56 0 12.27 9 21 24 5.71z'/></svg>",
+    'warning': "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='#FF4747' d='M12 1 0 23h24L12 1zm-1 8h2v7h-2V9zm1 11.3a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6z'/></svg>"
+};
+
+
+
+
 /**
  * 
  * @param {Object}                                       schema
@@ -154,28 +164,28 @@ function InputBox( schema ) {
      * @property
      * @private
      */
-    this._iconDefaultSrc = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><defs/><path d='M23 20.2L14.8 12 23 3.8 20.2 1 12 9.2 3.8 1 1 3.8 9.2 12 1 20.2 3.8 23l8.2-8.2 8.2 8.2z'/></svg>";
+    this._iconDefaultSrc = InputBoxIcons[ 'default' ];
 
     /**
      * 
      * @property
      * @private
      */
-    this._iconLoadingSrc = "<svg class='animateRotation' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='m4.26 18.32-1.42 1.42a11.94 11.94 0 0 1 0-15.48l1.42 1.42a9.96 9.96 0 0 0 0 12.64zM22 12c0 2.4-.85 4.6-2.26 6.32l1.42 1.42a11.94 11.94 0 0 0 0-15.48l-1.42 1.42A9.96 9.96 0 0 1 22 12zM5.68 4.26a9.95 9.95 0 0 1 12.64 0l1.42-1.42a11.94 11.94 0 0 0-15.48 0l1.42 1.42zm12.64 15.48a9.95 9.95 0 0 1-12.64 0l-1.42 1.42a11.94 11.94 0 0 0 15.48 0l-1.42-1.42z'/></svg>";
+    this._iconLoadingSrc = InputBoxIcons[ 'loading' ];
 
     /**
      * 
      * @property
      * @private
      */
-    this._iconSuccessSrc = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M20.29 2 9 13.57 3.71 8.56 0 12.27 9 21 24 5.71z'/></svg>";
+    this._iconSuccessSrc = InputBoxIcons[ 'success' ];
 
     /**
      * 
      * @property
      * @private
      */
-    this._iconWarningSrc = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='#FF4747' d='M12 1 0 23h24L12 1zm-1 8h2v7h-2V9zm1 11.3a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6z'/></svg>";
+    this._iconWarningSrc = InputBoxIcons[ 'warning' ];
 
     /**
      * 
