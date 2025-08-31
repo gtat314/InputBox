@@ -680,6 +680,37 @@ InputBox.prototype.isValidInt = function() {
 };
 
 /**
+ * @method
+ * @public
+ * @returns {Boolean}
+ */
+InputBox.prototype.isPositiveInteger = function() {
+
+    var regex = /^[0-9]+$/;
+
+    if ( regex.test( this._inputElem.value ) ) {
+
+        var number = Number( this._inputElem.value );
+
+        if ( Number.isInteger( number ) && number > 0 ) {
+
+            return true;
+
+        } else {
+
+            return false;
+
+        }
+
+    } else {
+
+        return false;
+
+    }
+
+};
+
+/**
  * 
  * @returns {String|null}
  */
