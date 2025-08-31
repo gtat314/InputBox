@@ -431,6 +431,14 @@ InputBox.prototype.disable = function() {
 
 };
 
+InputBox.prototype.enable = function() {
+
+    this._disabled = false;
+
+    this._inputElem.setAttribute( 'disabled', false );
+
+};
+
 /**
  * 
  * @param {String} errorMessage 
