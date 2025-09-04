@@ -221,6 +221,48 @@ function InputBox( schema ) {
      */
     this._uppercase = false;
 
+    /**
+     * @property
+     * @private
+     * @type {CallableFunction}
+     */
+    this._handleInputInputElem = this._evt_input_inputElem.bind( this );
+
+    /**
+     * @property
+     * @private
+     * @type {CallableFunction}
+     */
+    this._handleFocusoutInputElem = this._evt_focusout_inputElem.bind( this );
+
+    /**
+     * @property
+     * @private
+     * @type {CallableFunction}
+     */
+    this._handleKeydownInputElem = this._evt_keydown_inputElem.bind( this );
+
+    /**
+     * @property
+     * @private
+     * @type {CallableFunction}
+     */
+    this._handlePasteInputElem = this._evt_paste_inputElem.bind( this );
+
+    /**
+     * @property
+     * @private
+     * @type {CallableFunction}
+     */
+    this._handleClickIconElem = this._evt_click_iconElem.bind( this );
+
+    /**
+     * @property
+     * @private
+     * @type {CallableFunction}
+     */
+    this._handleClickParentElem = this._evt_click_parentElem.bind( this );
+
 
 
 
@@ -321,20 +363,20 @@ function InputBox( schema ) {
 
     if ( this._inputElem !== null ) {
 
-        this._inputElem.addEventListener( 'input',      this._evt_input_inputElem.bind( this ) );
-        this._inputElem.addEventListener( 'focusout',   this._evt_focusout_inputElem.bind( this ) );
-        this._inputElem.addEventListener( 'keydown',    this._evt_keydown_inputElem.bind( this ) );
-        this._inputElem.addEventListener( 'paste',      this._evt_paste_inputElem.bind( this ) );
+        this._inputElem.addEventListener( 'input',      this._handleInputInputElem );
+        this._inputElem.addEventListener( 'focusout',   this._handleFocusoutInputElem );
+        this._inputElem.addEventListener( 'keydown',    this._handleKeydownInputElem );
+        this._inputElem.addEventListener( 'paste',      this._handlePasteInputElem );
 
     }
 
     if ( this._iconElem !== null ) {
 
-        this._iconElem.addEventListener( 'click', this._evt_click_iconElem.bind( this ) );
+        this._iconElem.addEventListener( 'click', this._handleClickIconElem );
 
     }
 
-    this._parentElem.addEventListener( 'click', this._evt_click_parentElem.bind( this ) );
+    this._parentElem.addEventListener( 'click', this._handleClickParentElem );
 
     if ( schema.hasOwnProperty( 'eventListeners' ) ) {
 
