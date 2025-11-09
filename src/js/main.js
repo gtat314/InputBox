@@ -762,6 +762,35 @@ InputBox.prototype.getName = function() {
 
 }
 
+/**
+ * @method
+ * @public
+ * @returns {Boolean}
+ */
+InputBox.prototype.isNumeric = function() {
+
+    var str = this._inputElem.value.trim();
+
+    if ( str === "" ) {
+
+        return false;
+
+    }
+
+    var num = Number( str );
+
+    if ( typeof num === 'number' && isFinite( num ) ) {
+
+        return true;
+
+    } else {
+
+        return false;
+        
+    }
+
+};
+
 
 
 
@@ -820,7 +849,7 @@ InputBox.prototype._evt_focusout_inputElem = function( evt ) {
 
     if ( this._onFocusoutCallback !== null ) {
 
-        this._onFocusoutCallback( evt );
+        this._onFocusoutCallback( evt, this );
 
     }
 
